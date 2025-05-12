@@ -1,6 +1,6 @@
 (function () {
   if (window.tUI) {
-    console.warn("tUI ya está cargado. Evitando duplicación.");
+    console.warn("tUI is already runing. Stopping execution.");
     return;
   }
   const style = document.createElement("style");
@@ -117,7 +117,7 @@
   `;
   document.head.appendChild(style);
 
-  // --- CREAR ESTRUCTURA HTML ---
+  // --- HTML NECESARY STRUCTURE ---
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
     <div id="ui-spinner-overlay">
@@ -144,7 +144,7 @@
     dark: "#333",
   };
 
-  // --- FUNCIONES GLOBALES ---
+  // --- GLOBAL FUNCTIONS ---
   window.tUI = {
     showSpinner: function (options = {}) {
       const config = {
@@ -214,7 +214,7 @@
     },
   };
 
-  // Cerrar modal al hacer clic fuera o en el botón de cerrar
+  // close modal after click out of moodal zone
   document
     .getElementById("ui-modal-overlay")
     .addEventListener("click", function (e) {
